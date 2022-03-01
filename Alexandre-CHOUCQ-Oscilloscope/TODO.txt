@@ -41,18 +41,18 @@ Premiere version : paramétrage d'un signal
 ==========================================
 
 Affichage et contrôle d'un signal ("X") dans l'application  :
- 1) décomposer la classe Simulator de l'application principale (main.py) suivant le modèle MVC :
-      - Modèle : classe Generator (generator.py)
-      - Vue  : classe Screen  (screen.py)
-      - Controleur : classe Controller (controls.py)
- 2) contrôler le signal, par des sliders (Scale), en amplitude, frequence et phase 
- 3) contrôler le nombre d'harmoniques du signal par un slider 
- 4) contrôler les harmoniques paires, impaires par des boutons à comportement radio  (Radiobutton)
- 5) agencer la vue et les contrôleurs dans des conteneurs (Frame, LabelFrame ...))
- 6) réagencer automatiquement les composants graphiques en cas de retaillage de la fenetre
- 7) configurer l'IHM (couleur,texte, positionnement des sliders ...) par un fichier d'options 
+ 1) décomposer la classe Simulator de l'application principale (main.py) suivant le modèle MVC :#
+      - Modèle : classe Generator (generator.py)#
+      - Vue  : classe Screen  (screen.py)#
+      - Controleur : classe Controller (controls.py)#
+ 2) contrôler le signal, par des sliders (Scale), en amplitude, frequence et phase #
+ 3) contrôler le nombre d'harmoniques du signal par un slider #
+ 4) contrôler les harmoniques paires, impaires par des boutons à comportement radio  (Radiobutton) #
+ 5) agencer la vue et les contrôleurs dans des conteneurs (Frame, LabelFrame ...))#
+ 6) réagencer automatiquement les composants graphiques en cas de retaillage de la fenetre#
+ 7) configurer l'IHM (couleur,texte, positionnement des sliders ...) par un fichier d'options #
  8) proposer une animation d'un spot correspondant a l'elongation (after())
- 9) inserer dans l'IHM la possibilite de parametrer le nombre d'échnatillons pour créer la courbe))
+ 9) inserer dans l'IHM la possibilite de parametrer le nombre d'échnatillons pour créer la courbe))#
  
 Deuxieme version : Gestion de barre de Menu 
 ===========================================
@@ -62,15 +62,15 @@ Deuxieme version : Gestion de barre de Menu
    - About Python : informations (messagebox,filedialog  ...) sur le langage utilisé pour développer l'IHM
 
 2) Menu de gestion de fichiers :
-   - Exit : sortie d'application
-      a) sans avertir l'utilisateur (exit())
-      b) avec boite de dialogue (messagebox,filedialog  ...) 
-   - Open : chargement des parametres de signaux
-      a) chargement d'un nom de fichier fixé par defaut dans l'application (json.load())
-      b) en utilisant une boite de dialogue pour sélectionner le nom de fichier (filedialog ...) 
-   - Save : sauvegarde des parametres de signaux
-      a) dans un nom de fichier fixé par defaut dans l'application (json.dump())
-      b) en utilisant une boite de dialogue pour sélectionner le nom de fichier (filedialog ...}) 
+   - Exit : sortie d'application #
+      a) sans avertir l'utilisateur (exit()) #
+      b) avec boite de dialogue (messagebox,filedialog  ...) #
+   - Open : chargement des parametres de signaux #
+      a) chargement d'un nom de fichier fixé par defaut dans l'application (json.load()) #
+      b) en utilisant une boite de dialogue pour sélectionner le nom de fichier (filedialog ...)  #
+   - Save : sauvegarde des parametres de signaux #
+      a) dans un nom de fichier fixé par defaut dans l'application (json.dump()) #
+      b) en utilisant une boite de dialogue pour sélectionner le nom de fichier (filedialog ...}) #
    - Save Image (PIL) : sauvegarde de l'affichage (Canvas) dans un fichier (format png, jpg ...)
      a) dans un nom de fichier fixé par defaut dans l'application
      b) en utilisant une boite de dialogue pour sélectionner le répertoire et le nom de fihier

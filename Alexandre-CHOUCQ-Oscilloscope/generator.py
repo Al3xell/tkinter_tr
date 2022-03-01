@@ -8,16 +8,16 @@ from math import pi,sin
 class Generator(Subject):
  
 #-----Constructor-----#
-    def __init__(self, name="signal",mag=0.5,freq=2.0,phase=0.0,harmonics=1):
+    def __init__(self, name="signal",mag=0.5,freq=2.0,phase=0.0,harmonics=1, samples = 100, signal = [], harmo_odd_even = 1):
         super().__init__()
         self.name=name
         self.mag=mag
         self.freq=freq
         self.phase=phase
         self.harmonics=harmonics
-        self.samples=100
-        self.signal=[]
-        self.harmo_odd_even=1
+        self.samples=samples
+        self.signal=signal
+        self.harmo_odd_even=harmo_odd_even
 
 #-----___str___-----#
 
@@ -43,6 +43,8 @@ class Generator(Subject):
     def get_signal(self):
         # signal=copy.copy(self.signal)
         return self.signal
+    def get_harmo_odd_even(self):
+        return self.harmo_odd_even
 #-----Setter-----#
     def set_name(self,name):
         self.name=name
@@ -56,6 +58,8 @@ class Generator(Subject):
         self.harmonics=harmonics
     def set_samples(self,samples):
         self.samples=samples
+    def set_harmo_odd_even(self,harmo_odd_even):
+        self.harmo_odd_even = harmo_odd_even
         
 #-----Methods-----#
 

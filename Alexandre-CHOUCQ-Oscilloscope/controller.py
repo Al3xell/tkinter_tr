@@ -1,5 +1,6 @@
 from generator import *
 from screen import *
+from menubar import MenuBar
     
 class Controller(object):
 
@@ -15,6 +16,7 @@ class Controller(object):
     
     def get_view(self):
         return self.view
+    
  
 #-----Setter-----#
     def set_model(self, model):
@@ -83,7 +85,7 @@ class Controller(object):
         print("cb_update_harmonics(self,event)",self.harmonics_var.get())
         self.model.set_harmonics(self.harmonics_var.get())
         self.model.generate()
-        self.view.plot_signal(self.model.get_sigHarmonicsnal(),self.model.get_name())
+        self.view.plot_signal(self.model.get_signal(),self.model.get_name())
         
     def cb_update_freq(self,event):
         print("cb_update_freq(self,event)",self.freq_var.get())
@@ -108,6 +110,7 @@ class Controller(object):
         self.view.get_canvas().delete("grid")
         self.view.create_grid()
         self.model.notify()
+        
         
     def packing(self) :
         self.scale_mag.pack(fill="x", expand=0.8)

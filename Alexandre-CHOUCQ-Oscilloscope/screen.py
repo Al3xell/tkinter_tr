@@ -9,7 +9,7 @@ if major==2 and minor==7 :
     import tkFileDialog as filedialog
 elif major==3 :
     import tkinter as tk
-    from tkinter import filedialog
+    from tkinter import filedialog, messagebox
 
 class Screen(Observer):
  
@@ -80,7 +80,7 @@ class Screen(Observer):
         
 if __name__ == "__main__" :
     root = tk.Tk()
-    root.title("test")
+    root.title("Osciloscope")
     
     screen = Screen(root)
     screen.set_tiles(10)
