@@ -38,9 +38,9 @@ class MenuBar(object):
             
     def onOpen(self):
         
-        file = filedialog.askopenfilename(initialdir = "$HOME",title = "Open file",filetypes = (("Json Parameters","*.json"),("All files","*.*")))
+        filename = filedialog.askopenfilename(initialdir = "$HOME",title = "Open file",filetypes = (("Json Parameters","*.json"),("All files","*.*")))
         
-        f = open(file, "r")
+        f = open(filename, "r")
         data = json.load(f)
         
         self.controller.model = Generator(data['name'],data['mag'],data['freq'],data['phase'],data['harmonics'],data['samples'],data['signal'],data['harmo_odd_even'])
@@ -50,19 +50,17 @@ class MenuBar(object):
     
     def onSave(self):
         
-        file = filedialog.asksaveasfile(initialdir = "$HOME",initialfile = 'Signal.json',title = "Save as",filetypes = [('JSON File', '*.json')], defaultextension=json)
+        filename = filedialog.asksaveasfile(initialdir = "$HOME",initialfile = 'Signal.json',title = "Save as",filetypes = [('JSON File', '*.json')], defaultextension=json)
         data = self.data()
-        json.dump(data, file)
+        json.dump(data, filename)
         
     def onSaveImg(self):
         x = tk.Canvas.winfo_rootx(self.controller.view.canvas)
         y = tk.Canvas.winfo_rooty(self.controller.view.canvas)
         w = tk.Canvas.winfo_width(self.controller.view.canvas)
         h = tk.Canvas.winfo_height(self.controller.view.canvas)
-        
-        file = filedialog.asksaveasfile(initialdir = "$HOME",initialfile = 'Image.png',title = "Save Image as",filetypes = [('PNG File', '*.png')])
-    
-        img= ImageGrab.grab((x, y, x+w, y+h)).save('test.png')
+        MsgBox =  tk.messagebox.showinfo(title='Sauvegarder !', message='Signal sauvergarder !')
+        img= ImageGrab.grab((x, y, x+w, y+h)).save('Canva.png')
  
     
     def onExit(self):
